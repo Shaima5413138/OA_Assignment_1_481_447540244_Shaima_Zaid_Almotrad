@@ -1,10 +1,10 @@
 # My Answers - Assignment 1 (CFLP: VNS vs Gurobi)
 
 **Student Information:**
-- **Student ID:** ___________________________
-- **Student Name:** ___________________________
-- **Gurobi Version Used:** [ ] Academic [ ] Free
-- **Date Completed:** ___________________________
+- **Student ID:** 447540244___________________________
+- **Student Name:** Shaima Zaid Almotrad___________________________
+- **Gurobi Version Used:** [yes ] Academic [ ] Free
+- **Date Completed:**2026-11-10 ___________________________
 
 ---
 

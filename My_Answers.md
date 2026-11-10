@@ -326,29 +326,27 @@ I kept the same capacity check, VNS stopping settings, and Gurobi solutions. Bot
 
 ### G.3 - Demonstrated Improvement
 
-For the bonus test, I ran both versions of VNS on the **same 144 generated instances** with student ID **447540244**. I used the same initial random state for the two runs and the same settings: 100 maximum iterations, 20 iterations without improvement, and 15 neighbors. I also checked the solutions against the capacity constraints. These are results from the controlled Python comparison; running the notebook again may give slightly different VNS results.
+I ran the improved VNS on the same **144 facility-location instances** using student ID **447540244**. I compared its results with the saved results from the original notebook. Both versions were compared using the same Gurobi optimal costs. The improved notebook also checks capacity feasibility before saving each new solution.
 
 | Result | Original VNS | Improved VNS |
 |---|---:|---:|
-| Feasible solutions (out of 144) | 136 | 144 |
-| Average solution cost on the 136 cases feasible in both runs | 23,501.55 | 22,832.63 |
-| Cases with a lower cost (among these 136) | — | 123 |
-| Cases with the same cost (among these 136) | — | 10 |
-| Cases with a higher cost (among these 136) | — | 3 |
+| Average optimality gap | 14.17% | 11.61% |
+| Instances with a gap below 5% | 0 | 8 |
+| Instances with a gap above 20% | 19 | 11 |
+| Average VNS solution cost | 23,443.44 | 22,884.44 |
 
-The mean relative cost reduction on the 136 comparable, feasible cases was **2.70%**. The other 8 cases were infeasible in the original run but became feasible with the improved assignment routine. Their old costs should not be treated as valid solutions.
+The average gap decreased by **2.56 percentage points**. Out of 144 instances, the solution cost decreased in **123**, increased in **11**, and stayed the same in **10**. The average relative cost reduction across all instances was **2.23%**.
 
-Here are some gap comparisons using the Gurobi optimal costs from the original results:
+Some examples from my results are:
 
-| Instance | Original gap | Improved gap |
+| Instance | Gap before | Gap after |
 |---|---:|---:|
 | 001 (Small–Easy) | 16.25% | 13.46% |
-| 003 (Small–Easy) | 10.07% | 8.12% |
 | 010 (Small–Easy) | 15.45% | 10.00% |
-| 012 (Small–Easy) | 14.16% | 13.12% |
-| 019 (Small–Moderate) | 21.35% | 10.69% |
+| 132 (Large–Expensive) | 18.61% | 8.49% |
+| 120 (Large–Moderate) | 18.29% | 30.40% |
 
-The improved version had a lower cost in most of the cases we could compare, and all its assignments passed the capacity checks in this test. It does not reach a gap below 5% in all cases. The full controlled test is in `bonus_validation_student_447540244.csv`. The corrected code is in `447540244_Shaima_Zaid_Almotrad_Assignment1_IMPROVED.ipynb`. The notebook can also make new `_IMPROVED` results on my own computer.
+The improvement helped in most cases, but not all. For example, instance 120 became worse. This shows that changing a heuristic can lead to different local solutions. The results are from this run, so another run may give slightly different results. I saved the comparison in `bonus_comparison_student_447540244.csv`, with the new results in `results_student_447540244_IMPROVED.csv` and `.xlsx`. The modified code is in `447540244_Shaima_Zaid_Almotrad_Assignment1_IMPROVED.ipynb`.
 
 ---
 

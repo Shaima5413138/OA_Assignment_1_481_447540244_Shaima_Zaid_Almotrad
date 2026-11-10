@@ -355,7 +355,6 @@ The improved version had a lower cost in most of the cases we could compare, and
 ## Additional Comments (Optional)
 
 The results show that VNS is usually faster, while Gurobi gives better solution quality. The best choice depends on how much time and extra cost the company can accept.
-
 ---
 
 ## Declaration
